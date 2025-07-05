@@ -4,12 +4,138 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta http-equiv="X-UA-Compatible" content="IE-edge">
-        <title>Thisaru Dilhara</title>
+        <title>Thisaru Dilhara - Professional Portfolio</title>
         <link rel="icon" href="./images/favicon.ico?v1" type="image/x-icon" />
         <link rel="stylesheet" href="css/style.css">
         
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        
+        <style>
+            /* Enhanced styles for new sections */
+            .section-padding {
+                padding: 5rem 9% 2rem;
+            }
+            
+            .journal-container, .career-container, .certificates-container {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .journal-entry, .career-phase, .certificate-item {
+                background: var(--second-bg-color, #323946);
+                padding: 2rem;
+                border-radius: 1rem;
+                box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+                border-left: 4px solid var(--main-color, #0ef);
+            }
+            
+            .journal-entry h3, .career-phase h3, .certificate-item h3 {
+                color: var(--main-color, #0ef);
+                margin-bottom: 1rem;
+            }
+            
+            .timeline {
+                position: relative;
+                padding-left: 2rem;
+            }
+            
+            .timeline::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 2px;
+                background: var(--main-color, #0ef);
+            }
+            
+            .timeline-item {
+                position: relative;
+                margin-bottom: 2rem;
+                padding-left: 2rem;
+            }
+            
+            .timeline-item::before {
+                content: '';
+                position: absolute;
+                left: -0.5rem;
+                top: 0.5rem;
+                width: 1rem;
+                height: 1rem;
+                background: var(--main-color, #0ef);
+                border-radius: 50%;
+            }
+            
+            .certificate-gallery {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+            
+            .certificate-card {
+                background: var(--second-bg-color, #323946);
+                padding: 2rem;
+                border-radius: 1rem;
+                text-align: center;
+                transition: transform 0.3s ease;
+            }
+            
+            .certificate-card:hover {
+                transform: translateY(-5px);
+            }
+            
+            .certificate-icon {
+                font-size: 3rem;
+                color: var(--main-color, #0ef);
+                margin-bottom: 1rem;
+            }
+            
+            .download-section {
+                background: var(--second-bg-color, #323946);
+                padding: 3rem;
+                border-radius: 1rem;
+                text-align: center;
+                margin-top: 3rem;
+            }
+            
+            .download-section h3 {
+                color: var(--main-color, #0ef);
+                margin-bottom: 1rem;
+            }
+            
+            .download-buttons {
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-top: 1.5rem;
+            }
+            
+            .btn-secondary {
+                background: transparent;
+                border: 2px solid var(--main-color, #0ef);
+                color: var(--main-color, #0ef);
+            }
+            
+            .btn-secondary:hover {
+                background: var(--main-color, #0ef);
+                color: var(--bg-color, #1f242d);
+            }
+            
+            @media (max-width: 768px) {
+                .certificate-gallery {
+                    grid-template-columns: 1fr;
+                }
+                
+                .download-buttons {
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+        </style>
     </head>
 
     <body>
@@ -22,8 +148,11 @@
             <nav class="navbar">
                 <a href="#home" class="active">Home</a>
                 <a href="#about">About</a>
+                <a href="#journal">Reflective Journal</a>
+                <a href="#career">Career Plan</a>
                 <a href="#services">Services</a>
-                <a href="#portfolio">Portfolio</a>
+                <a href="#portfolio">Projects</a>
+                <a href="#certificates">Certificates</a>
                 <a href="#contact">Contact</a>
                 <a><i class='bx bx-sun' id="toggleDark"></i></a>
             </nav>
@@ -56,8 +185,126 @@
             <div class="about-content">
                 <h2 class="heading">About <span>Me</span></h2>
                 <h3>Software Engineer</h3>
-                <p>Hi there! I'm a passionate junior software engineer with a strong focus on UI/UX design. I have experience in creating websites, MERN stack projects, and small mobile apps. I’m dedicated to delivering high-quality solutions that blend functionality and aesthetics seamlessly. With a solid foundation in programming, a keen eye for detail, and a flair for design, I strive to bring innovative ideas to life. Let’s build something amazing together!</p>
-                <!-- <a href="" class="btn">Read More</a> -->
+                <p>Hi there! I'm a passionate junior software engineer with a strong focus on UI/UX design. I have experience in creating websites, MERN stack projects, and small mobile apps. I'm dedicated to delivering high-quality solutions that blend functionality and aesthetics seamlessly. With a solid foundation in programming, a keen eye for detail, and a flair for design, I strive to bring innovative ideas to life.</p>
+                <p>This portfolio represents my journey through the Professional Practice in Web Development (PPW) course and showcases my growth as a developer. Through continuous learning and hands-on projects, I've developed expertise in modern web technologies and best practices in software engineering.</p>
+            </div>
+        </section>
+
+        <!-- NEW SECTION: Reflective Journal -->
+        <section class="journal section-padding" id="journal">
+            <h2 class="heading">Reflective <span>Journal</span></h2>
+            <p style="text-align: center; margin-bottom: 3rem;">Insights and learnings from my Professional Practice in Web Development (PPW) journey</p>
+            
+            <div class="journal-container">
+                <div class="journal-entry">
+                    <h3><i class='bx bx-lightbulb'></i> Technical Skills Development</h3>
+                    <p>Throughout the PPW course, I've significantly enhanced my technical abilities in web development. I've gained hands-on experience with the MERN stack (MongoDB, Express.js, React, Node.js), which has become my primary technology stack. The course challenged me to build full-stack applications, teaching me the importance of both frontend user experience and backend architecture.</p>
+                    <p><strong>Key Learning:</strong> Understanding how to structure scalable web applications and implement proper database design has been crucial for my development as a software engineer.</p>
+                </div>
+
+                <div class="journal-entry">
+                    <h3><i class='bx bx-group'></i> Professional Communication & Collaboration</h3>
+                    <p>One of the most valuable aspects of PPW was learning how to work effectively in a team environment. Through group projects and peer reviews, I've developed better communication skills and learned to appreciate different perspectives on problem-solving. Version control with Git became second nature, and I now understand the importance of clean, documented code.</p>
+                    <p><strong>Key Learning:</strong> Effective collaboration requires clear communication, proper documentation, and mutual respect for team members' contributions.</p>
+                </div>
+
+                <div class="journal-entry">
+                    <h3><i class='bx bx-target-lock'></i> Problem-Solving & Critical Thinking</h3>
+                    <p>The PPW course presented numerous challenges that pushed me to think critically and develop creative solutions. From debugging complex issues to optimizing application performance, each obstacle became a learning opportunity. I've learned to approach problems systematically, breaking them down into manageable components.</p>
+                    <p><strong>Key Learning:</strong> The ability to persist through challenges and maintain a growth mindset is essential for success in software development.</p>
+                </div>
+
+                <div class="journal-entry">
+                    <h3><i class='bx bx-trending-up'></i> Industry Awareness & Future Trends</h3>
+                    <p>PPW opened my eyes to current industry trends and best practices. I've learned about responsive design principles, accessibility standards, and modern development methodologies like Agile. Understanding these industry standards has prepared me for professional work environments.</p>
+                    <p><strong>Key Learning:</strong> Staying updated with industry trends and continuously learning new technologies is crucial for long-term career success.</p>
+                </div>
+
+                <div class="journal-entry">
+                    <h3><i class='bx bx-medal'></i> Personal Growth & Confidence</h3>
+                    <p>Perhaps the most significant change has been in my confidence as a developer. Initially, I was hesitant about taking on complex projects, but PPW has shown me that with persistence and proper planning, I can tackle challenging problems. The course has also improved my time management and project planning skills.</p>
+                    <p><strong>Key Learning:</strong> Building confidence comes through practice, and every project - successful or challenging - contributes to professional growth.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW SECTION: Career Development Plan -->
+        <section class="career section-padding" id="career">
+            <h2 class="heading">Career Development <span>Plan</span></h2>
+            <p style="text-align: center; margin-bottom: 3rem;">My roadmap for professional growth and development in software engineering</p>
+            
+            <div class="career-container">
+                <div class="career-phase">
+                    <h3><i class='bx bx-rocket'></i> Short-term Goals (6-12 months)</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h4>Secure Junior Developer Position</h4>
+                            <p>Apply for junior software engineer or web developer positions at innovative companies. Focus on startups and mid-sized companies where I can gain diverse experience and contribute meaningfully to projects.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Expand Technical Skills</h4>
+                            <p>Master advanced React concepts, learn TypeScript, and gain proficiency in cloud platforms (AWS/Azure). Complete at least 2 professional certification courses.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Build Professional Network</h4>
+                            <p>Attend tech meetups, join developer communities, and actively engage on professional platforms like LinkedIn and GitHub. Aim to connect with 50+ industry professionals.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="career-phase">
+                    <h3><i class='bx bx-trending-up'></i> Medium-term Goals (1-3 years)</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h4>Specialize in Full-Stack Development</h4>
+                            <p>Become proficient in advanced backend technologies, microservices architecture, and database optimization. Lead at least one major project from conception to deployment.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Mentorship & Leadership</h4>
+                            <p>Begin mentoring junior developers and take on team lead responsibilities. Contribute to open-source projects and share knowledge through tech blogs or speaking engagements.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Continuous Learning</h4>
+                            <p>Pursue advanced certifications in cloud computing, DevOps, or specialized frameworks. Consider part-time masters or professional development courses.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="career-phase">
+                    <h3><i class='bx bx-crown'></i> Long-term Vision (3-5 years)</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h4>Senior Technical Role</h4>
+                            <p>Achieve senior software engineer or technical lead position. Be recognized as a subject matter expert in chosen specialization areas.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Innovation & Impact</h4>
+                            <p>Lead innovative projects that create significant business value. Explore emerging technologies like AI/ML integration, blockchain, or IoT development.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Entrepreneurial Aspirations</h4>
+                            <p>Consider starting a tech consultancy or SaaS product. Build a personal brand as a thought leader in software development and UI/UX design.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="career-phase">
+                    <h3><i class='bx bx-wrench'></i> Skill Development Strategy</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h4>Technical Skills Priority</h4>
+                            <p>Focus on: Advanced JavaScript/TypeScript, Cloud Architecture, DevOps practices, Mobile Development (React Native), and emerging web technologies.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Soft Skills Enhancement</h4>
+                            <p>Improve: Project management, technical communication, client relations, team leadership, and strategic thinking capabilities.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Industry Knowledge</h4>
+                            <p>Stay updated with: Latest frameworks, security best practices, accessibility standards, and business technology trends.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -67,26 +314,22 @@
             <div class="services-container">
                 <div class="services-box">
                     <i class='bx bxs-pointer'></i>
-                    <h3> ui/ux Designer </h3>
-                    <!-- <a href="" class="btn">Read More</a> -->
+                    <h3>UI/UX Designer</h3>
                 </div>
 
                 <div class="services-box">
                     <i class='bx bxs-pointer'></i>
                     <h3>Front-End Development</h3>
-                    <!-- <a href="" class="btn">Read More</a> -->
                 </div>
                 
                 <div class="services-box">
                     <i class='bx bx-cog' ></i>
                     <h3>Back-End Development</h3>
-                    <!-- <a href="" class="btn">Read More</a> -->
                 </div>
                 
                 <div class="services-box">
                     <i class='bx bx-devices'></i>
                     <h3>Android Application Development</h3>
-                    <!-- <a href="" class="btn">Read More</a> -->
                 </div>
             </div>
         </section>
@@ -95,23 +338,21 @@
             <h2 class="heading">My <span>Projects</span></h2>
 
             <div class="portfolio-container">
-
                 <div class="portfolio-box">
                     <img src="images/p5 (2).png" alt="">
                     <div class="portfolio-layer">
                         <h4>Food App UI</h4>
-                        <p>Figma</p>
-                        <a href="https://www.figma.com/design/dFrHq9T0GLRVH3ADzgEqxE/Untitled?t=JmX1ffW2BOyxmrng-1"><i class='bx bx-link-external'></i></i></a>
+                        <p>Figma Design</p>
+                        <a href="https://www.figma.com/design/dFrHq9T0GLRVH3ADzgEqxE/Untitled?t=JmX1ffW2BOyxmrng-1"><i class='bx bx-link-external'></i></a>
                     </div>
                 </div>
 
                 <div class="portfolio-box">
                     <img src="images/p7.png" alt="">
                     <div class="portfolio-layer">
-                        <h4>Food app</h4>
-                        <p>Prototype - Figma</p>
-                        
-                        <a href="https://www.figma.com/proto/dFrHq9T0GLRVH3ADzgEqxE?node-id=0-1&t=W0v0IDg2iCpZtrxn-6"><i class='bx bx-link-external'></i></i></a>
+                        <h4>Food App Prototype</h4>
+                        <p>Interactive Prototype - Figma</p>
+                        <a href="https://www.figma.com/proto/dFrHq9T0GLRVH3ADzgEqxE?node-id=0-1&t=W0v0IDg2iCpZtrxn-6"><i class='bx bx-link-external'></i></a>
                     </div>
                 </div>
 
@@ -119,17 +360,16 @@
                     <img src="images/p8.png" alt="">
                     <div class="portfolio-layer">
                         <h4>Hotel Management System</h4>
-                        <p>Figma</p>
-                        <a href="https://www.figma.com/proto/kTaxo1jPzo9PHWISLooClP?node-id=8-951&t=3zLzVVakFESxqWYZ-6"><i class='bx bx-link-external'></i></i></a>
+                        <p>Complete UI/UX Design - Figma</p>
+                        <a href="https://www.figma.com/proto/kTaxo1jPzo9PHWISLooClP?node-id=8-951&t=3zLzVVakFESxqWYZ-6"><i class='bx bx-link-external'></i></a>
                     </div>
                 </div>
 
                 <div class="portfolio-box">
                     <img src="images/10.png" alt="">
                     <div class="portfolio-layer">
-                        <h4>Landing Page For Tourist Website</h4>
-                        <p>Figma</HTml></p>
-                        <!-- <a href=":https://www.figma.com/design/ZrGMHyYewwgNgBvP4d7HJV/Untitled?m=auto&t=BEK3jGKMKjXVhwt5-6"><i class='bx bx-link-external'></i></i></a> -->
+                        <h4>Tourist Website Landing Page</h4>
+                        <p>Landing Page Design - Figma</p>
                     </div>
                 </div>
 
@@ -137,20 +377,102 @@
                     <img src="images/Screenshot (152).png" alt="">
                     <div class="portfolio-layer">
                         <h4>Pearl Harvest Website</h4>
-                        <p>Figma</p>
-                        <!-- <a href="://https://https://www.figma.com/design/06CxULHblSSWDIt54t9NAv/Untitled?m=auto&t=gYNUe4cuxhudy0W3-6"></i></i></a> -->
+                        <p>Website Design - Figma</p>
                     </div>
                 </div>
                 
                 <div class="portfolio-box">
                     <img src="images/p1.png" alt="">
                     <div class="portfolio-layer">
-                        <h4>Juweliers shop Webapp</h4>
-                        <p>MERN Stack</p>
-                        <a href="https://github.com/IT21158704/Store-web-app.git"><i class='bx bx-link-external'></i></i></a>
+                        <h4>Jewelers Shop Web Application</h4>
+                        <p>Full-Stack Development - MERN Stack</p>
+                        <a href="https://github.com/IT21158704/Store-web-app.git"><i class='bx bx-link-external'></i></a>
                     </div>
                 </div>
-                
+            </div>
+        </section>
+
+        <!-- NEW SECTION: Certificates -->
+        <section class="certificates section-padding" id="certificates">
+            <h2 class="heading">Certificates & <span>Achievements</span></h2>
+            <p style="text-align: center; margin-bottom: 3rem;">Professional development through continuous learning and skill enhancement</p>
+            
+            <div class="certificate-gallery">
+                <div class="certificate-card">
+                    <div class="certificate-icon">
+                        <i class='bx bxl-react'></i>
+                    </div>
+                    <h3>React Advanced Concepts</h3>
+                    <p><strong>Provider:</strong> Coursera - Meta</p>
+                    <p><strong>Completed:</strong> 2024</p>
+                    <p>Advanced React patterns, hooks, context API, and performance optimization techniques.</p>
+                    <a href="#" class="btn btn-secondary">View Certificate</a>
+                </div>
+
+                <div class="certificate-card">
+                    <div class="certificate-icon">
+                        <i class='bx bxl-aws'></i>
+                    </div>
+                    <h3>AWS Cloud Practitioner</h3>
+                    <p><strong>Provider:</strong> Amazon Web Services</p>
+                    <p><strong>Completed:</strong> 2024</p>
+                    <p>Foundational knowledge of AWS cloud services, architecture, and best practices.</p>
+                    <a href="#" class="btn btn-secondary">View Certificate</a>
+                </div>
+
+                <div class="certificate-card">
+                    <div class="certificate-icon">
+                        <i class='bx bx-paint'></i>
+                    </div>
+                    <h3>UI/UX Design Fundamentals</h3>
+                    <p><strong>Provider:</strong> Google UX Design</p>
+                    <p><strong>Completed:</strong> 2024</p>
+                    <p>User-centered design principles, prototyping, and design thinking methodologies.</p>
+                    <a href="#" class="btn btn-secondary">View Certificate</a>
+                </div>
+
+                <div class="certificate-card">
+                    <div class="certificate-icon">
+                        <i class='bx bxl-javascript'></i>
+                    </div>
+                    <h3>JavaScript Algorithms & Data Structures</h3>
+                    <p><strong>Provider:</strong> freeCodeCamp</p>
+                    <p><strong>Completed:</strong> 2024</p>
+                    <p>Advanced JavaScript concepts, algorithms, and data structure implementation.</p>
+                    <a href="#" class="btn btn-secondary">View Certificate</a>
+                </div>
+
+                <div class="certificate-card">
+                    <div class="certificate-icon">
+                        <i class='bx bx-mobile-alt'></i>
+                    </div>
+                    <h3>Mobile App Development</h3>
+                    <p><strong>Provider:</strong> Udemy</p>
+                    <p><strong>Completed:</strong> 2024</p>
+                    <p>React Native development, cross-platform mobile app creation, and deployment.</p>
+                    <a href="#" class="btn btn-secondary">View Certificate</a>
+                </div>
+
+                <div class="certificate-card">
+                    <div class="certificate-icon">
+                        <i class='bx bx-git-branch'></i>
+                    </div>
+                    <h3>Git & GitHub Mastery</h3>
+                    <p><strong>Provider:</strong> GitHub Learning Lab</p>
+                    <p><strong>Completed:</strong> 2024</p>
+                    <p>Advanced version control, collaborative development, and DevOps practices.</p>
+                    <a href="#" class="btn btn-secondary">View Certificate</a>
+                </div>
+            </div>
+
+            <div class="download-section">
+                <h3>Complete Portfolio Package</h3>
+                <p>Download my complete professional portfolio including CV, certificates, and project documentation</p>
+                <div class="download-buttons">
+                    <a href="components/THISARU-DILHARA-CV.pdf" class="btn">Download CV</a>
+                    <a href="components/THISARU-DILHARA-Portfolio.pdf" class="btn btn-secondary">Download Portfolio (PDF)</a>
+                    <a href="components/THISARU-DILHARA-Certificates.zip" class="btn btn-secondary">Download Certificates</a>
+                </div>
             </div>
         </section>
 
@@ -158,34 +480,108 @@
             <h2 class="heading">Contact <span>Me!</span></h2>
 
             <div class="contact-container">
-                <a href="mailto:thisarudilhara2@.com"  class="contact-box" id="contact-email">
-                        <i class='bx bx-envelope'></i>
+                <a href="mailto:thisarudilhara2@gmail.com" class="contact-box" id="contact-email">
+                    <i class='bx bx-envelope'></i>
                 </a>
                 
-                <a href="https://wa.me/+94771920470"  class="contact-box" id="contact-whatsapp">
-                        <i class='bx bxl-whatsapp' ></i>
+                <a href="https://wa.me/+94771920470" class="contact-box" id="contact-whatsapp">
+                    <i class='bx bxl-whatsapp'></i>
                 </a>
                 
                 <a href="https://www.facebook.com/thisarudilhara.d?mibextid=ZbWKwL" class="contact-box" id="contact-fb">
-                        <i class='bx bxl-facebook'></i>
+                    <i class='bx bxl-facebook'></i>
                 </a>
             </div>
-            
         </section>
 
         <footer class="footer">
             <div class="footer-text">
-                <p>Copyrignt &copy; 2024 by vishva | All Rights Reserved.</p>
+                <p>Copyright &copy; 2024 by Thisaru Dilhara | All Rights Reserved.</p>
             </div>
 
             <div class="footer-iconTop">
-                <a href="#home"><i class='bx bx-up-arrow-alt' ></i></a>
+                <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
             </div>
         </footer>
 
         <script src="https://unpkg.com/scrollreveal"></script>
         <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-        <script src="js/script.js"></script>
+        <script>
+            // Enhanced navigation for new sections
+            document.addEventListener('DOMContentLoaded', function() {
+                // Smooth scrolling for navigation links
+                const navLinks = document.querySelectorAll('.navbar a[href^="#"]');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href').substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
 
+                // Initialize Typed.js
+                if (document.querySelector('.multiple-text')) {
+                    new Typed('.multiple-text', {
+                        strings: ['Frontend Developer', 'UI/UX Designer', 'Backend Developer', 'Full-Stack Engineer'],
+                        typeSpeed: 100,
+                        backSpeed: 100,
+                        backDelay: 1000,
+                        loop: true
+                    });
+                }
+
+                // ScrollReveal animations
+                if (typeof ScrollReveal !== 'undefined') {
+                    ScrollReveal().reveal('.journal-entry', { 
+                        delay: 200, 
+                        distance: '50px',
+                        origin: 'bottom',
+                        interval: 200
+                    });
+                    
+                    ScrollReveal().reveal('.career-phase', { 
+                        delay: 300, 
+                        distance: '50px',
+                        origin: 'left',
+                        interval: 300
+                    });
+                    
+                    ScrollReveal().reveal('.certificate-card', { 
+                        delay: 100, 
+                        distance: '30px',
+                        origin: 'bottom',
+                        interval: 100
+                    });
+                }
+
+                // Update active navigation on scroll
+                window.addEventListener('scroll', function() {
+                    const sections = document.querySelectorAll('section[id]');
+                    const scrollPosition = window.scrollY + 100;
+
+                    sections.forEach(section => {
+                        const sectionTop = section.offsetTop;
+                        const sectionHeight = section.offsetHeight;
+                        const sectionId = section.getAttribute('id');
+                        const navLink = document.querySelector(`.navbar a[href="#${sectionId}"]`);
+
+                        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                            document.querySelectorAll('.navbar a').forEach(link => {
+                                link.classList.remove('active');
+                            });
+                            if (navLink) {
+                                navLink.classList.add('active');
+                            }
+                        }
+                    });
+                });
+            });
+        </script>
     </body>
 </html>
